@@ -38,3 +38,27 @@ En la clase 1 vimos tres ejemplos de aplicaciones Shiny:
 - documentación {bslib} para crear interfaces en Shiny: https://rstudio.github.io/bslib/
 - documentación de Shiny: https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/
 - Mastering Shiny, libro avanzado de Shiny: https://mastering-shiny.org
+
+
+----
+
+# Clase 2
+
+En la clase 2 mejoramos la aplicación que creamos en la clase 1:
+
+- Aprendimos a visualizar la reactividad de nuestras aplicaciones con `reactlog::reactlog_enable()`
+- vimos ejemplos para crear párrafos de texto a partir de los datos de nuestra aplicación
+- creamos un gráfico que depende del mismo input el cual depende la tabla
+- aprendimos a crear nuevos inputs desde el paquete {shinyWidgets}, y revisar la galería de widgets con `shinyWidgets::shinyWidgetsGallery()`
+- aprendimos a agregar estilos `css` con el argumento `style` en los divs, y además a hacerlo con el paruqete {htmltools}
+- aprendimos a crear columnas con la función `layout_columns()`
+- agregamos condicionalidad a los elementos de nuestra aplicación creando inputs que luego son usados en condicionales `if else` para modificar el flujo del código
+- usamos el paquete {shinyjs} para ocultar y mostrar elementos de nuestra obligación a partir de inputs
+- creamos elementos de la interfaz de nuestra aplicación usando {purrr}, para crear una cantidad indeterminada de elementos en base a los datos
+
+## Recursos clase 2:
+- visualizar reactividad con {reactlog} https://rstudio.github.io/reactlog/
+- galería de shinyWidgets: https://dreamrs.github.io/shinyWidgets/index.html
+- javascript en Shiny con {shinyjs} https://deanattali.com/shinyjs/
+
+----
