@@ -62,3 +62,26 @@ En la clase 2 mejoramos la aplicación que creamos en la clase 1:
 - javascript en Shiny con {shinyjs} https://deanattali.com/shinyjs/
 
 ----
+
+
+# Clase 3
+
+En la clase 3 vimos formas de construir interfaces de aplicaciones Shiny usando el paquete `{bslib}`.
+  
+En la carpeta `apps_ejemplos` hay plantillas para aplicaciones Shiny de tipo columnas, menú, pestañas, sidebar, y tarjetas. Elige la que más creas que sirve para tu proyecto, o combina sus características.
+
+- en `app_pobreza_2.R` modificamos la aplicación que hemos ido trabajando para entregarle un tema de colores.
+- usamos el paquete `{thematic}` para que el gráfico adquirir automáticamente los colores de nuestro tema.
+- también modificamos la tabla `{gt}` para que coincida con el tema de colores.
+- usamos `showNotification()` para enviar notificaciones ante un cambio en nuestra app
+- con `showModal()` podemos hacer que se abra una ventana con más información o elementos al presionar un botón
+- podemos personalizar aún más los elementos de nuestra app usando `div(style = css(...))` para especificar el CSS de elementos específicos, o podemos modificar el CSS dentro de nuestro script con `tags$style()` dentro de la UI, y/o podemos usar una hoja de estilos CSS con `includeCSS("styles.css")` dentro de nuestra UI.
+
+
+## Recursos clase 3:
+
+- [Pigment: paletas de colores](https://pigment.shapefactory.co)
+- [Realtime Colors: simulador de interfaz web con paletas de colores](https://www.realtimecolors.com/?colors=1b110c-f9f4f2-bd7a56-d9ae97-ce8d6a&fonts=Poppins-Poppins)
+- [2 Color Combinations: pares de colores](https://2colors.colorion.co)
+- [Tipografías de Google](https://fonts.google.com/)
+- [Pares de tipografías](https://www.fontpair.co/all)
