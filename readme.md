@@ -8,7 +8,7 @@ Docente: _Bastián Olea Herrera._ baolea@uc.cl
 
 ![](curso_desarrollo_apps_linkedin_2.jpeg)
 
-Repositorio con los materiales y las clases de la versión 2 del curso, impartida en [SpatialLab.](http://spatiallab.cl)
+Repositorio con los materiales y las clases de la versión 2 del curso, impartida en [SpatialLab.](http://spatiallab.cl) Dentro de cada carpeta de la clase se encuentran las **diapositivas** usadas en cada clase.
 
 En [SpatialLab encontrarás muchos más cursos](https://spatiallab.cl/cursos-1) sobre R y análisis de datos impartidos por profesionales de diversas áreas.
 
@@ -99,6 +99,15 @@ En esta clase aprendimos distintas formas de compartir nuestras aplicaciones:
 3. Publicando nuestra aplicación al servicio [shinyapps.io](https://www.shinyapps.io)
 4. Creando nuestro propio servidor virtual en [Digital Ocean](https://m.do.co/c/b117f791b027) y subiendo nuestra aplicación ahí.
 
+Cómo hacer que el gráfico se agrande dependiendo de los datos:
+```r
+output$grafico <- renderPlot({
+   # código del gráfico
+   },
+   height = reactive(20 + (nrow(dato_region()) * 42))
+  )
+# en este caso, el alto parte con 20 pixeles, y le suma x multiplicado por 42 pixeles, donde x es la cantidad de comunas en el gráfico (las filas del dataframe)
+```
 
 ## Recursos
 
