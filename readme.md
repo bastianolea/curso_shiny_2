@@ -113,6 +113,7 @@ output$grafico <- renderPlot({
 
 - [Mis repositorios de GitHub,](https://github.com/bastianolea?tab=repositories) por si necesitas una app o proyecto para clonar
 - [Ejemplo de un portafolio de apps Shiny](https://bastianolea.github.io/shiny_apps/), programado en Quarto para crear un HTML que luego se publica con GitHub Pages [(código aquí)](https://github.com/bastianolea/shiny_apps)
+- [Libro Happy Git with R](https://happygitwithr.com), para resolver todas las dudas sobre git y encontrar instrucciones paso a paso
 - [Descargar git](https://git-scm.com/downloads) (para poder tener control de versiones y repositorios locales en tu equipo)
 - [Crear una cuenta en GitHub](https://github.com) (para poder subir tus repositorios locales a internet y compartirlos
 - [Crear una cuenta en ShinyApps.io](https://www.shinyapps.io), para publicar tus apps
