@@ -43,12 +43,12 @@ thematic_shiny()
 # tipografías ----
 library(sysfonts)
 
-# desacrgar tipografías para ggplot2
+# descargar tipografías para ggplot2
 sysfonts::font_add_google("Fira Code", "Fira Code")
 
-# detectar tipografías
+# detectar tipografías para ggplot2
 showtext::showtext_auto()
-showtext::showtext_opts(dpi = 140)
+showtext::showtext_opts(dpi = 140) # tamaño global del texto en ggplot2
 
 
 
@@ -60,6 +60,7 @@ ui <- page_sidebar(
                    fg = color_texto,
                    primary = color_primario,
                    secondary = color_secundario,
+                   
                    # aplicar una tipografía desde Google Fonts
                    base_font = font_google("Fira Code"),
                    heading_font = font_google("Fira Sans")
@@ -128,6 +129,8 @@ ui <- page_sidebar(
   # ui titulo ----
   h2(textOutput("texto_region")) |> tooltip("Bienvenido/a"),
   
+  em("Versión 2"),
+  
   ## pestañas ----
   navset_card_tab(
     
@@ -143,7 +146,10 @@ ui <- page_sidebar(
                     
                     h3("Tabla"),
                     
-                    gt_output("tabla_region"),
+                    div(style = css(margin_top = "-28px"), # modificar espaciado superior de la tabla
+                    gt_output("tabla_region")
+                    
+                    ),
                     # actionButton("opcion_tabla", label = "Mostrar/ocultar")
                     
                     radioGroupButtons(
@@ -286,7 +292,7 @@ server <- function(input, output, session) {
       gt() |>
       fmt_percent(pobreza_p, 
                   decimals = input$opcion_decimales, 
-                  dec_mark = ",") |>
+                  dec_mark = ",", sep_mark = ".") |>
       cols_label(pobreza_p = "Pobreza (%)",
                  region = "Región",
                  nombre_comuna = "Comuna")
@@ -295,7 +301,7 @@ server <- function(input, output, session) {
     # browser()
     
     tabla2 <- tabla1 |>
-    # tabla1 |> 
+      # tabla1 |> 
       tab_options(table.font.color = color_texto,
                   table.background.color = color_fondo,
                   # líneas horizontales y verticales
@@ -306,7 +312,8 @@ server <- function(input, output, session) {
                   # lineas de arriba y abajo de la tabla
                   column_labels.border.top.color = color_fondo, 
                   table_body.border.bottom.color = color_fondo
-      )
+      ) |> 
+      tab_options(table.font.size = "80%") #achicar tamaño del texto de la tabla
     
     # agregar color depende de la elección
     if (input$opcion_tabla == "Con color") {
@@ -346,7 +353,7 @@ server <- function(input, output, session) {
       aes(x = pobreza_p, y = nombre_comuna) +
       geom_col(aes(fill = alerta),
                width = 0.5) +
-      geom_text(aes(label = scales::percent(pobreza_p)),
+      geom_text(aes(label = scales::percent(pobreza_p, accuracy = 0.1)),
                 hjust = 0, nudge_x = 0.01, family = "Fira Code") +
       # theme_classic() +
       scale_x_continuous(labels = scales::label_percent(),
@@ -361,7 +368,10 @@ server <- function(input, output, session) {
     
     # dev.new()
     # browser()
-  })
+  },
+  # que el alto del gráfico dependa de la cantidad de datos
+  height = reactive({ 20 + (nrow(dato_region())*42) })
+  )
   
   
   

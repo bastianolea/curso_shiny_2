@@ -1,0 +1,12 @@
+name: clase_4_shiny
+title: clase_4_shiny
+username: bastianoleah
+account: bastianoleah
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 13589023
+bundleId: 9512883
+url: https://bastianoleah.shinyapps.io/clase_4_shiny/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
