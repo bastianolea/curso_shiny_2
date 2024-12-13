@@ -85,3 +85,28 @@ En la carpeta `apps_ejemplos` hay plantillas para aplicaciones Shiny de tipo col
 - [2 Color Combinations: pares de colores](https://2colors.colorion.co)
 - [Tipografías de Google](https://fonts.google.com/)
 - [Pares de tipografías](https://www.fontpair.co/all)
+
+
+
+----
+
+# Clase 4
+  
+En esta clase aprendimos distintas formas de compartir nuestras aplicaciones:
+
+1. Manualmente, procurando que nuestra app sea autocontenida en una sola carpeta, con un proyecto de RStudio, e idealmente usando el paquete `{renv}`
+2. Subiendo nuestro código a un repositorio de [GitHub](https://github.com)
+3. Publicando nuestra aplicación al servicio [shinyapps.io](https://www.shinyapps.io)
+4. Creando nuestro propio servidor virtual en [Digital Ocean](https://m.do.co/c/b117f791b027) y subiendo nuestra aplicación ahí.
+
+
+## Recursos
+
+- [Mis repositorios de GitHub,](https://github.com/bastianolea?tab=repositories) por si necesitas una app o proyecto para clonar
+- [Ejemplo de un portafolio de apps Shiny](https://bastianolea.github.io/shiny_apps/), programado en Quarto para crear un HTML que luego se publica con GitHub Pages [(código aquí)](https://github.com/bastianolea/shiny_apps)
+- [Descargar git](https://git-scm.com/downloads) (para poder tener control de versiones y repositorios locales en tu equipo)
+- [Crear una cuenta en GitHub](https://github.com) (para poder subir tus repositorios locales a internet y compartirlos
+- [Crear una cuenta en ShinyApps.io](https://www.shinyapps.io), para publicar tus apps
+- [Crear una cuenta en Digital Ocean](https://m.do.co/c/b117f791b027), para crear tus propios servidores
+- [Mis aplicaciones Shiny](https://bastianolea.rbind.io/apps/)
+- [ShinyManager](https://datastorm-open.github.io/shinymanager/), paquete que permite tener aplicaciones con usuarios y contraseña
